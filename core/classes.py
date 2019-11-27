@@ -8,6 +8,7 @@ class Cog_Extension(commands.Cog):
 
 class Gloable_Func():
 	def update_jdata(self, key, data, type='default', mode='update'):
+		'''更新 Jdata 功能'''
 		with open('setting.json', 'r', encoding='utf8') as jfile:
 			jdata = json.load(jfile)
 			if mode == 'update':
@@ -23,8 +24,8 @@ class Gloable_Func():
 			json.dump(jdata, jfile, indent=4, ensure_ascii=False)
 	
 class Logger:
-	
 	def log(self, ctx, data, type='error'):
+		'''事件紀錄器'''
 		time = datetime.datetime.now().strftime('[%Y-%m-%d] [%H:%M]')
 		user = ctx.author.name
 		channel = ctx.channel.name

@@ -17,3 +17,6 @@ class Errors():
 			# default_check = True
 			await ctx.send(self, error)
 			Logger.log(self, ctx, error)
+		else:
+			await ctx.send(f'未知錯誤: {error}')
+			Logger.log(self, ctx, error)

@@ -1,7 +1,7 @@
 import discord
 from discord.ext import commands
 from core.classes import Cog_Extension
-import json, asyncio
+import json, asyncio, os
 
 with open('setting.json', 'r', encoding='utf8') as jfile:
    jdata = json.load(jfile)
@@ -25,8 +25,14 @@ class Owner(Cog_Extension):
 	@commands.is_owner()
 	async def reload(self, ctx, extension):
 		'''重新裝載 Cog'''
-		self.bot.reload_extension(f'cmds.{extension}')
-		await ctx.send(f'Re - Loaded {extension} done.')
+		if extension == '*':
+			for filename in os.listdir('./cmds'):
+				if filename.endswith('.py'):
+					self.bot.reload_extension(f'cmds.{filename[:-3]}')
+			await ctx.send(f'Re - Loaded All done.')
+		else:
+			self.bot.reload_extension(f'cmds.{extension}')
+			await ctx.send(f'Re - Loaded {extension} done.')
 
 	@commands.command()
 	@commands.is_owner()

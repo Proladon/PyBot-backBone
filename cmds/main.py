@@ -20,11 +20,13 @@ class Main(Cog_Extension):
 
 	@commands.command()
 	async def ping(self, ctx):
+		'''Bot 延遲'''
 		await ctx.send(f'{round(self.bot.latency*1000)} ms')
 
 	@commands.command()
-	@check.valid_user()
+	@check.valid_user() #檢查權限, 是否存在於效人員清單中, 否則無法使用指令
 	async def test(self, ctx):
+		'''有效人員 指令權限測試'''
 		await ctx.send('Bee! Bo!')
 
 

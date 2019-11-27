@@ -10,6 +10,7 @@ with open('setting.json', 'r', encoding='utf8') as jfile:
 class Event(Cog_Extension):
 	@commands.Cog.listener()
 	async def on_command_error(self, ctx, error):
+		'''指令錯誤觸發事件'''
 		error_command = '{0}_error'.format(ctx.command)
 		try:
 			# 檢查是否有 Custom Error Handler
