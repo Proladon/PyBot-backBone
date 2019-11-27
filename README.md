@@ -14,17 +14,19 @@
 
 # Introduction 簡介
 
-*選單式路徑操作 圖片機器人**
+Ver.Proladon - Pyhon Discord Bot 基本框架
 
-- 面向使用龐大本機圖庫而開發
+整體架構是參考並簡化改進先前於 Discord Hack Week 19 共同開發的 [Libereus](https://github.com/Tansc161/Libereus)
 
-- 無須記憶繁多的關鍵字或過多的指令
+- 快速開發 for (初學者/開發者)
+
+- Cog 架構
 
 # Installation 安裝指南
 
 > 運行環境 建議 `Python 3.6` 以上
 
-> Step.1 下載整個專案 (https://github.com/Proladon/PIX-Chan/archive/master.zip)
+> Step.1 下載整個專案
 
 > Step.2 解壓後將 `example_setting.json` 重新命名為 `setting.json` ; 自行修改設定檔裡的資料
 
