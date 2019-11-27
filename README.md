@@ -3,7 +3,7 @@
 
 [![Python 3.6](https://img.shields.io/badge/python-3.6-blue.svg)](https://www.python.org/downloads/release/python-367/)
 [![Open Source Love svg1](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/)
-![Version](https://img.shields.io/badge/Version-0.1.2A-brightgreen)
+![Version](https://img.shields.io/badge/Version-0.1.0A-brightgreen)
 
 
 ## 🛠 Developer 開發者
