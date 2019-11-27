@@ -14,7 +14,9 @@
 
 # ⚡ Introduction 簡介
 
-**Ver.Proladon - Pyhon Discord Bot 基本框架**
+**Proladon-Discord_BaseBot (PDB-Bot)**
+
+**(Proladon - Pyhon Discord Bot 基本框架)**
 
 整體架構是參考並簡化改進先前於 Discord Hack Week 19 共同開發的 [Libereus](https://github.com/Tansc161/Libereus)
 
