@@ -30,7 +30,7 @@
 
 - Error Handler 、 Logger 、 Gloable Function 、 Checker
 
-## Installation 安裝指南
+## 📥 Installation 安裝指南
 
 > 運行環境 建議 `Python 3.6` 以上
 
@@ -40,7 +40,7 @@
 
 > Step.3 運行 `bot.py` 即可
 
-## Documention 文件說明
+## 📜 Documention 文件說明
 
 - **bot.py** / 主文件
 
