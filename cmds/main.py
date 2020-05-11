@@ -28,6 +28,11 @@ class Main(Cog_Extension):
 	async def test(self, ctx):
 		'''有效人員 指令權限測試'''
 		await ctx.send('Bee! Bo!')
+		
+	@commands.command()
+	async def sayd(self, ctx, *content: str):
+		'''訊息覆誦'''
+		await ctx.send(content)
 
 
 def setup(bot):
