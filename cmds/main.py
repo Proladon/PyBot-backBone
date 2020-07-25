@@ -26,16 +26,23 @@ class Main(Cog_Extension):
 		'''Bot 延遲'''
 		await ctx.send(f'{round(self.bot.latency*1000)} ms')
 
+
 	@commands.command()
 	@check.valid_user() #檢查權限, 是否存在於效人員清單中, 否則無法使用指令
 	async def test(self, ctx):
 		'''有效人員 指令權限測試'''
 		await ctx.send('Bee! Bo!')
 		
+
 	@commands.command()
 	async def sayd(self, ctx, *, content: str):
 		'''訊息覆誦'''
+		if "@everyone" in content:
+			await ctx.send(f"{ctx.author.mention} 請勿標註 `everyone` !")
+			return
+		else: await ctx.message.delete()
 		await ctx.send(content)
+
 
 	@commands.command()
 	async def info(self, ctx):

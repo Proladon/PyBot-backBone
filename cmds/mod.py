@@ -7,6 +7,7 @@ with open('setting.json', 'r', encoding='utf8') as jfile:
    jdata = json.load(jfile)
 
 class Mod(Cog_Extension):
+
     @commands.command(aliases=['cc'])
     @commands.has_permissions(administrator=True)
     async def purge(self, ctx, num: int, reason=None):
@@ -23,5 +24,7 @@ class Mod(Cog_Extension):
                 await ctx.send(Global_Func.code(lang='fix', msg=f'已清理 {num} 則訊息.\nReason: {levels[reason]}'))
         else:
             await ctx.send(content=Global_Func.code(lang='fix', msg=f'已清理 {num} 則訊息.\nReason: {reason}'), delete_after=5.0)
+
+
 def setup(bot):
    bot.add_cog(Mod(bot))

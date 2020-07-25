@@ -8,7 +8,7 @@ import random, os, asyncio
 with open('setting.json', 'r', encoding='utf8') as jfile:
 	jdata = json.load(jfile)
 
-bot = commands.Bot(command_prefix=jdata['Prefix'], owner_id=jdata['Owner_id'])
+bot = commands.Bot(command_prefix=jdata['Prefix'], owner_ids=jdata['Owner_id'])
 
 @bot.event
 async def on_ready():

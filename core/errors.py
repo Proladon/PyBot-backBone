@@ -22,7 +22,8 @@ class Errors():
 	# 預設 Error Handler
 	async def default_error(self, ctx, error):
 		if isinstance(error, commands.MissingRequiredArgument):
-			await ctx.send(self, error)
+			err = str(error).split(" ")[0]
+			await ctx.send(f"遺失必要參數： <`{err}`>")
 			await ctx.send_help(ctx.command)
 			Logger.log(self, ctx, error)
 		elif "403 Forbidden" in str(error):
