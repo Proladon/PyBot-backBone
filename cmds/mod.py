@@ -1,23 +1,27 @@
 import discord
 from discord.ext import commands
-from core.classes import Cog_Extension, Gloable_Func
+from core.classes import Cog_Extension, Global_Func
 import json
 
 with open('setting.json', 'r', encoding='utf8') as jfile:
    jdata = json.load(jfile)
 
 class Mod(Cog_Extension):
-	@commands.command()
-	async def info(self, ctx):
-		embed = discord.Embed(title="About P_Base-Bot", description="Made Bot Easier !", color=0x28ddb0)
-		# embed.set_thumbnail(url="#")
-		embed.add_field(name="開發者 Developers", value="Proladon#7525 (<@!149772971555160064>)", inline=False)
-		embed.add_field(name="源碼 Source", value="[Link](https://github.com/Proladon/Proladon-DC_BaseBot)", inline=True)
-		embed.add_field(name="協助 Support Server", value="[Link](https://discord.gg/R75DXHH)" , inline=True)
-		embed.add_field(name="版本 Version", value="0.1.0 a", inline=False)
-		embed.add_field(name="Powered by", value="discord.py v{}".format(discord.__version__), inline=True)
-		embed.add_field(name="Prefix", value=jdata['Prefix'], inline=False)
-		embed.set_footer(text="Made with ❤")
-		await ctx.send(embed=embed)
+    @commands.command(aliases=['cc'])
+    @commands.has_permissions(administrator=True)
+    async def purge(self, ctx, num: int, reason=None):
+        '''清理指定數量訊息'''
+        await ctx.channel.purge(limit=num + 1)
+        
+        levels = {
+            "a": "非對應頻道內容",
+            "b": "不雅用詞"
+        }
+
+        if reason is not None:
+            if reason in levels.keys():
+                await ctx.send(Global_Func.code(lang='fix', msg=f'已清理 {num} 則訊息.\nReason: {levels[reason]}'))
+        else:
+            await ctx.send(content=Global_Func.code(lang='fix', msg=f'已清理 {num} 則訊息.\nReason: {reason}'), delete_after=5.0)
 def setup(bot):
    bot.add_cog(Mod(bot))

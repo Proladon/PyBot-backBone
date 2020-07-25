@@ -11,21 +11,22 @@ class Errors():
 	# 自訂 Error Handler
 	
 	@Main.sayd.error
-	'''Main.sayd 指令錯誤處理'''
 	async def sayd_error(self, ctx, error):
+		'''Main.sayd 指令錯誤處理'''
 		if isinstance(error, commands.MissingRequiredArgument):
-			await ctx.send('請輸入要覆誦的訊息')
+			err = str(error).split(" ")[0]
+			await ctx.send(f"遺失必要參數： <`{err}`>")
+			await ctx.send_help(ctx.command)
 			Logger.log(self, ctx, error)
 			
-		
-
-
 	# 預設 Error Handler
 	async def default_error(self, ctx, error):
-		# default_check = False
 		if isinstance(error, commands.MissingRequiredArgument):
-			# default_check = True
 			await ctx.send(self, error)
+			await ctx.send_help(ctx.command)
+			Logger.log(self, ctx, error)
+		elif "403 Forbidden" in str(error):
+			await ctx.send("403 Forbidden，請檢查 Bot 權限")
 			Logger.log(self, ctx, error)
 		else:
 			await ctx.send(f'未知錯誤: {error}')
