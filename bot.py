@@ -4,6 +4,11 @@ from core.classes import Cog_Extension
 import json
 import random, os, asyncio
 
+# For discord.py 1.5 breaking changes
+# Please read the offical API doc:
+# https://discordpy.readthedocs.io/en/latest/intents.html#intents-primer
+intents = discord.Intents.all()
+
 # load settings
 with open('setting.json', 'r', encoding='utf8') as jfile:
 	jdata = json.load(jfile)
