@@ -30,7 +30,7 @@
 <br>
 
 ## 📥 Installation 安裝指南
-> 運行環境 建議 `Python 3.6` 以上
+> 運行環境 建議 `Python 3.6` 以上 / `discord.py 1.5` 以上
 
 1. 下載整個專案  
 2.  解壓後將 `example_setting.json` 重新命名為 `setting.json` ; 自行修改設定檔裡的資料  
