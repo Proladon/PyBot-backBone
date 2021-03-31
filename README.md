@@ -5,13 +5,6 @@
 [![Open Source Love svg1](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/)
 
 
-
-## 🛠 Developer 開發者
-
-<img src="https://upload.cc/i1/2019/11/19/9kz7Yw.gif" width=150> 　　　　<img src="https://upload.cc/i1/2019/11/19/WwHIZS.gif" width=114.5>
-
-**Proladon #7525**　　　　　 　[![discord](https://lihi1.cc/7CBE7)](https://lihi1.cc/j2C5r)
-
 ## ⚡ Introduction 簡介
 
 ### **Discord Python Bot BackBone**
